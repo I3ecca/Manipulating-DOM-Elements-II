@@ -66,38 +66,94 @@ $(function(){
 
 })
 
-//Changing the Data of an Element. Associating and removing data with JQuery. 
+//Changing the Data of an Element. Associating and removing data with JQuery. Uncomment to see effects!
 $(function(){
-  let gallery = $(".gallery");
-  console.log(gallery);
+  // let gallery = $(".gallery");
+  // console.log(gallery);
 
-  let images =  [
-    "img/laptop-mobile_small.jpg",
-    "img/laptop-on-table_small.jpg",
-    "img/people-office-group-team_small.jpg"
-  ];
+
+  // let images =  [
+  //   "img/laptop-mobile_small.jpg",
+  //   "img/laptop-on-table_small.jpg",
+  //   "img/people-office-group-team_small.jpg"
+  // ];
+
 // Here we are adding a new key to the object called availableImages and added the images as its value. 
-  gallery.data("availableImages", images);
+
+  // gallery.data("availableImages", images);
+
   //Prints out array of the three images available. 
-  console.log(gallery.data("availableImages"));
+
+  // console.log(gallery.data("availableImages"));
+
   // Here we creata a name key and assign the value of The Awersome Gallery. 
-  gallery.data("name", "The Awesome Gallery");
-  console.log(gallery.data("name"));
+
+  // gallery.data("name", "The Awesome Gallery");
+  // console.log(gallery.data("name"));
+
   //We can use data() method to see all the data the selected value has. 
-  console.log(gallery.data());
+
+  // console.log(gallery.data());
 
   //We can also remove key/value pairs from data like so:
-  gallery.removeData("name");
+
+  // gallery.removeData("name");
+
   //Now when we print out the data for gallery, it no longer has name. 
-  console.log(gallery.data());
+
+  // console.log(gallery.data());
+
   // Will return undefined because the name was removed. 
-  console.log(gallery.data("name"));
+
+  // console.log(gallery.data("name"));
 
 
   //Another cool thing is that with HTML 5 you can specify a key value pair right in the HTML. In the HTML we wrote on the first p tag, data-mydata="some data here". Now when we want to access that, JQuery will recognize the data as mydata. 
-  let firstP = $("p:first");
 
-  console.log(firstP.data("mydata"));
+  // let firstP = $("p:first");
+
+  // console.log(firstP.data("mydata"));
+
+
+})
+
+
+//Manipulating the data between the opening and closing tags. The content of the element!
+$(function(){
+
+// We will be focusing on these two methods! text(), html()
+
+// let firstPar = $("p:first");
+
+//When you log out with text() and html() you can see they are very similar! They both log out the text of the first p element, however the html also prints out any other tags that are in the p. In this case we can see the <span> elements print out. 
+
+//Both of the functions will not include the parent paragraph tag. But only what is between the opening and closing tags. 
+
+// console.log(firstPar.text());
+// console.log(firstPar.html());
+
+// Seems like this one works? Actually because there are multiple p elements, JQuery is only going to pick the first one. The text() and html() methods can only be used for one element. 
+
+// console.log($("p").html());
+
+//Lets make a new text! IF we use the text() method to make new text but then I also want to add some HTML in like a strong tag, it will print out the tags as text on the docuemnt, not bold the text like we want. 
+
+//This can be helpful if you actually wanted to have some code snippets on your page, but if you do not want this, it is best to use he html() method. 
+
+// firstPar.text("<strong>Hello World!</strong>");
+// firstPar.html("<strong>Hello World!</strong>");
+
+
+//Quick Mini Challenege! Append some text to the paragraph. Adding all the text we had before plus a new sentence!
+
+//To do this, you select the firstPar variable, and then you use the html() method. Now you want to pass in the variable firstPar.html() + the new text you want after!
+
+// console.log(firstPar.html());
+
+// firstPar.html(firstPar.html() + " I am a new sentence at the end of the first paragraph!");
+
+// console.log(firstPar.html());
+
 
 
 })
