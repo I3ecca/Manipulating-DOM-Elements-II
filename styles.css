@@ -149,4 +149,13 @@ h2 {
 .fancy-link:hover:after {
   transform: scaleX(1); }
 
+  li li {
+    color: rgb(255, 0, 0);
+  }
+
+  .dummy {
+    font-size: large;
+    color: aqua;
+  }
+
 /*# sourceMappingURL=style.css.map */
